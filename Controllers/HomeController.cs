@@ -80,7 +80,7 @@ public class HomeController : Controller
     }
 
    
-    
+    [Authorize(Roles = "Admin")]
     public IActionResult Distros() {
 
         List<LinuxModel> distros = new List<LinuxModel>();
@@ -92,6 +92,7 @@ public class HomeController : Controller
         TempData["Distros"] = distros;
         return View("Distros");
     }
+
      [HttpPost]
     public IActionResult RemoveDistro()
     {
