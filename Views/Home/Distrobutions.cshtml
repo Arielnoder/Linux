@@ -1,0 +1,9 @@
+@model Linux.Models.LinuxModel
+@{
+    List<LinuxModel> distros = TempData["Distros"] as List<LinuxModel>;
+}
+@if(distros != null && distros.Count >= 1) {
+    
+} else {
+    <h1>No distros found</h1>
+}

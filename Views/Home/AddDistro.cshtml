@@ -1,0 +1,68 @@
+@model Linux.Models.LinuxModel
+@{
+    List<LinuxModel> distros = TempData["Distros"] as List<LinuxModel>;
+}
+
+@if (User.Identity.IsAuthenticated) {
+ <form action="/Home/AddDistroPost" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="Name">Name</label>
+        <input type="text" class="form-control" id="Name" placeholder="Enter Name" asp-for="Name"
+            minlength="2" maxlength="18" required>
+
+    </div>
+
+    <div class="form-group">
+        <label for="Description">Description</label>
+        <input type="textarea" class="form-control" id="Description" placeholder="Description" asp-for="description" required>
+
+    </div>
+    @* create resizeable text area input *@
+
+
+
+
+
+    <div class="form-group">
+        <label for="Based">Based</label>
+        <input type="textarea" class="form-control" id="Based" placeholder="Based" asp-for="Based" required
+            minlength="2" maxlength="500" required>
+    </div>
+
+    
+    <div class="form-group">
+        <label for="ImageFile" class="control-label"></label>
+        <input asp-for="ImageFile" class="form-control" accept="image/png, image/gif, image/jpeg">
+    </div>
+
+
+
+    <button type="submit" class="btn btn-primary">submit</button>
+ </form> 
+} else {
+    <div class="alert alert-danger">
+        <strong>You must be logged in to add a distro</strong>
+    </div>
+}
+
+<script>
+    const ele = document.getElementById('Description');
+
+ele.addEventListener('keydown', function (e) {
+    // Get the code of pressed key
+    const keyCode = e.which || e.keyCode;
+
+    // 13 represents the Enter key
+    if (keyCode === 13 && !e.shiftKey) {
+        // Don't generate a new line
+        e.preventDefault();
+
+        // Do something else such as send the message to back-end
+        // ...
+    }
+});
+</script>
+
+
+
+ 
