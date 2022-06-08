@@ -1,8 +1,14 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Linux.Models;
+using Linux.Data;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+
 using Microsoft.AspNetCore.Authorization;
+
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
 
 namespace Linux.Controllers;
 
@@ -11,7 +17,6 @@ public class HomeController : Controller
     private readonly ILogger<HomeController> _logger;
 
     private readonly IWebHostEnvironment webHostEnvironment;
-
 
     public HomeController(ILogger<HomeController> logger, IWebHostEnvironment webHostEnvironment)
     {
@@ -23,11 +28,23 @@ public class HomeController : Controller
     {
         return View();
     }
-   
+// get userlist from identity  database
+
+
     public IActionResult Index()
     {
+        
+       
         return View();
     }
+
+ 
+
+  
+
+ 
+   
+  
 
     public IActionResult Distrobutions()
     {
@@ -43,6 +60,10 @@ public class HomeController : Controller
     }
 
     public IActionResult History()
+    {
+        return View();
+    }
+      public IActionResult RegisterForm()
     {
         return View();
     }
@@ -92,6 +113,8 @@ public class HomeController : Controller
         TempData["Distros"] = distros;
         return View("Distros");
     }
+    // check how many times the website is visited
+  
 
      [HttpPost]
     public IActionResult RemoveDistro()
@@ -116,6 +139,9 @@ public class HomeController : Controller
 
 
     }
+
+
+    
 
 
     [HttpPost]
@@ -145,6 +171,8 @@ public class HomeController : Controller
 
 
     }
+
+  
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3h0kFxUKuywBBVkZXgDCQ8X3S+bKefCSc4QoB5Z+ctk=",
+  "Hash": "4Y360U2exw54+0VJ6V3MfmYZSm63Y6hrQxurXDveSes=",
   "Source": "Linux",
   "BasePath": "_content/Linux",
   "Mode": "Default",
@@ -1749,6 +1749,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.ico"
+    },
+    {
+      "Identity": "/home/ariel/Documents/Linux/wwwroot/images/index2.jpeg",
+      "SourceId": "Linux",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/ariel/Documents/Linux/wwwroot/",
+      "BasePath": "_content/Linux",
+      "RelativePath": "images/index2.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/index2.jpeg"
     },
     {
       "Identity": "/home/ariel/Documents/Linux/wwwroot/images/Screenshot from 2022-04-26 11-10-51.png",
